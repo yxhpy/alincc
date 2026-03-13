@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code 国内使用指南（2026）｜官方方案、第三方接入与交叉验证</title>
+  <meta name="description" content="2026 最新 Claude Code 国内使用指南：先看官方方案，再看第三方接入如何交叉验证。包含官方定价、安装方式、第三方核验清单、FAQ 与 GitHub Pages 落地页。">
+  <meta name="keywords" content="Claude Code, Claude Code 国内, Claude Code 教程, Claude Code 第三方接入, Anthropic, Claude Code 使用指南">
+  <meta property="og:title" content="Claude Code 国内使用指南（2026）">
+  <meta property="og:description" content="官方方案优先，第三方接入备用。用交叉验证的方法，而不是拍脑袋排行榜。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yxhpy.github.io/alincc/">
+  <meta property="og:site_name" content="alincc">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yxhpy.github.io/alincc/">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Claude Code 国内使用指南（2026）",
+    "description": "一份基于官方资料与第三方公开文档交叉验证的 Claude Code 国内使用与接入指南。",
+    "author": {"@type": "Person", "name": "yxhpy"},
+    "publisher": {"@type": "Organization", "name": "alincc"},
+    "mainEntityOfPage": "https://yxhpy.github.io/alincc/"
+  }
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container">
+      <div class="brand">alincc</div>
+      <div class="nav-links">
+        <a href="#facts">官方事实</a>
+        <a href="#verify">核验方法</a>
+        <a href="#examples">示例</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">2026 更新 · Claude Code 国内使用指南</span>
+        <h1>别再看一堆<br>会过期的代理商排名了</h1>
+        <p class="lead">这是一份更稳的 Claude Code 使用与接入指南：先看 Anthropic 官方方案，再看第三方如何交叉验证。目标不是给你拍脑袋排名，而是给你一套不容易翻车的判断框架。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#facts">先看官方事实</a>
+          <a class="btn" href="#checklist">直接抄核验清单</a>
+        </div>
+        <div class="hero-meta">
+          <span>官方优先</span>
+          <span>第三方备用</span>
+          <span>交叉验证</span>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="metric">
+          <span class="label">核心结论</span>
+          <strong>官方优先，第三方备用；先验证，再长期用。</strong>
+        </div>
+        <ul>
+          <li>不写虚高排名</li>
+          <li>不拿传闻当事实</li>
+          <li>只保留能核验的信息</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container" id="intro">
+      <div class="section-head">
+        <span class="kicker">What</span>
+        <h2>Claude Code 到底是什么</h2>
+      </div>
+      <div class="card prose">
+        <p>Claude Code 是 Anthropic 推出的 agentic coding tool。官方文档对它的定义很直接：它可以读代码库、改文件、跑命令，并且能和终端、IDE、桌面端、浏览器等开发环境协同工作。</p>
+        <p>对普通开发者来说，真正重要的不是“它听起来有多强”，而是两件事：</p>
+        <ol>
+          <li>你能不能用上官方方案；</li>
+          <li>如果必须走第三方，是否真的兼容 Claude Code，而不只是普通 Claude API。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section container" id="facts">
+      <div class="section-head">
+        <span class="kicker">Cross-verified facts</span>
+        <h2>目前能交叉验证的官方事实</h2>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>1. 官方产品与官方文档都存在</h3>
+          <p>Anthropic 官方已提供 Claude Code 产品页与文档页，说明这不是传闻型工具，而是正式产品。</p>
+          <ul class="link-list">
+            <li><a href="https://claude.com/product/claude-code" target="_blank" rel="noreferrer">Claude Code 产品页</a></li>
+            <li><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noreferrer">Claude Code 官方文档</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>2. Pro / Max 确实包含 Claude Code</h3>
+          <p>根据 Anthropic 官方 pricing 页面，Pro 与 Max 方案都包含 Claude Code，Team 方案也提供相关席位能力。</p>
+          <ul class="bullet-tight">
+            <li>Pro：$17/月（年付折算）或 $20/月（月付）</li>
+            <li>Max：$100/月起</li>
+            <li>Team：团队席位可包含 Claude Code</li>
+          </ul>
+          <a class="text-link" href="https://claude.com/pricing" target="_blank" rel="noreferrer">查看官方价格页</a>
+        </article>
+        <article class="card">
+          <h3>3. 官方安装方式不止 npm</h3>
+          <p>如果一篇文章还把 npm 全局安装写成唯一推荐方式，那大概率已经旧了。官方文档当前给出了安装脚本、Homebrew、WinGet 等方式。</p>
+          <div class="code-block">macOS / Linux: curl -fsSL https://claude.ai/install.sh | bash</div>
+        </article>
+        <article class="card">
+          <h3>4. 第三方接入需要额外核验</h3>
+          <p>“支持 Claude API” ≠ “兼容 Claude Code CLI”。只有看到公开文档、配置方式、环境变量示例，才算进入可验证区间。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="verify">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Verification framework</span>
+          <h2>第三方接入，别看广告词，看这 6 条</h2>
+        </div>
+        <div class="grid three">
+          <article class="card soft"><h3>公开文档</h3><p>有没有完整文档，而不是一句“支持 Claude Code”就完事。</p></article>
+          <article class="card soft"><h3>明确写 Claude Code</h3><p>不是只写 Claude API，而是明确说明 CLI 或 Claude Code 接入方式。</p></article>
+          <article class="card soft"><h3>配置示例</h3><p>最好能看到 <code>~/.claude/settings.json</code> 的实际结构与环境变量示例。</p></article>
+          <article class="card soft"><h3>限制条件</h3><p>是否说明限流、计费、峰值体验、风控和兼容边界。</p></article>
+          <article class="card soft"><h3>容错预期</h3><p>第三方方案要当备用线路，不要当唯一基础设施。</p></article>
+          <article class="card soft"><h3>安全隔离</h3><p>独立密码、独立 Key、敏感仓库谨慎接入，别把宣传词当安全承诺。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="examples">
+      <div class="section-head">
+        <span class="kicker">Examples, not rankings</span>
+        <h2>目前能核验到的第三方接入示例</h2>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>AI Code With</h3>
+          <p>可查到公开文档，且文档里给出了 Claude Code 接入与配置方式。</p>
+          <ul class="bullet-tight">
+            <li>有 macOS / Windows / Linux 教程</li>
+            <li>明确展示 <code>ANTHROPIC_BASE_URL</code> / <code>ANTHROPIC_AUTH_TOKEN</code></li>
+            <li>能确认“有接入说明”，但不能仅凭文档确认长期稳定性</li>
+          </ul>
+          <a class="text-link" href="https://docs.aicodewith.com/zh/docs/claude-code" target="_blank" rel="noreferrer">查看公开文档</a>
+        </article>
+        <article class="card">
+          <h3>UniAPI</h3>
+          <p>同样能查到公开文档，并给出 Claude Code CLI 相关配置示例。</p>
+          <ul class="bullet-tight">
+            <li>文档给出 <code>https://api.uniapi.io/claude</code> 作为 Base URL</li>
+            <li>展示了 <code>~/.claude/settings.json</code> 写法</li>
+            <li>仍然需要实测峰值体验与计费策略</li>
+          </ul>
+          <a class="text-link" href="https://docs.uniapi.ai/integration/claude_code" target="_blank" rel="noreferrer">查看公开文档</a>
+        </article>
+      </div>
+      <p class="note">注意：这里是“能核验到公开接入文档的示例”，不是“最强排行榜”。后者通常寿命很短，而且很容易把营销词写成事实。</p>
+    </section>
+
+    <section class="section container" id="checklist">
+      <div class="section-head">
+        <span class="kicker">Checklist</span>
+        <h2>一份能直接抄走的核验清单</h2>
+      </div>
+      <div class="card checklist">
+        <label><input type="checkbox"> 有官网吗？</label>
+        <label><input type="checkbox"> 有公开文档吗？</label>
+        <label><input type="checkbox"> 文档明确写了 Claude Code，而不只是 Claude API？</label>
+        <label><input type="checkbox"> 给出 <code>~/.claude/settings.json</code> 示例了吗？</label>
+        <label><input type="checkbox"> 说明 <code>ANTHROPIC_BASE_URL</code> 了吗？</label>
+        <label><input type="checkbox"> 说明计费与限流了吗？</label>
+        <label><input type="checkbox"> 能低成本试用吗？</label>
+        <label><input type="checkbox"> 能在真实项目中稳定跑一周吗？</label>
+      </div>
+    </section>
+
+    <section class="section container" id="faq">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <details class="card"><summary>是不是一定要走第三方？</summary><p>不是。能用官方就先用官方，第三方更适合支付、网络或地区受限时的过渡与备用。</p></details>
+        <details class="card"><summary>为什么不直接给我一个最强排行？</summary><p>因为第三方服务变化太快。价格、限流、稳定性、售后都会变，今天的第一名，下周可能就不稳了。</p></details>
+        <details class="card"><summary>看到公开文档就一定靠谱吗？</summary><p>不一定。公开文档只能证明“有接入说明”，不能自动证明“长期稳定、速度快、售后好”。这些还得你自己实测。</p></details>
+        <details class="card"><summary>这页内容适合谁？</summary><p>适合想在国内用 Claude Code，但又不想被过期排行和营销文带偏的人。</p></details>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-card">
+        <div>
+          <span class="kicker">Bottom line</span>
+          <h2>真正靠谱的顺序只有一个</h2>
+          <p>官方优先，第三方备用；先看文档，再做实测；别把营销文当结论。</p>
+        </div>
+        <a class="btn primary" href="https://github.com/yxhpy/alincc" target="_blank" rel="noreferrer">查看仓库</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 alincc · Claude Code 国内使用与第三方接入核验指南</p>
+      <p><a href="https://claude.com/pricing" target="_blank" rel="noreferrer">Anthropic Pricing</a> · <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noreferrer">Official Docs</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
