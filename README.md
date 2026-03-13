@@ -1,69 +1,48 @@
 # alincc
 
-一个面向 **Claude Code 国内使用 / 第三方接入核验** 的轻量静态站点。
+一个聚焦 **第三方便宜 Claude Code API / 接入** 的轻量静态站点。
 
-## 在线页面
-建议配合 GitHub Pages 使用：
+## 当前版本定位
+这版不再讨论官方方案，主线改为：
 
-- `index.html`：主落地页 / 主文章页
-- `styles.css`：页面样式
-- `script.js`：轻量交互脚本
-- `robots.txt`：搜索引擎抓取规则
+- 只看第三方
+- 强调交叉验证
+- 做一份带“性价比”视角的 Top10 清单
+- 不把营销词当硬事实
+
+## 站点结构
+- `index.html`：主页面，当前为《第三方便宜 Claude Code API / 接入 Top10（2026）》
+- `styles.css`：站点样式
+- `script.js`：轻量交互
+- `robots.txt`：抓取规则
 - `sitemap.xml`：站点地图
 
-## 这次更新做了什么
-这次不再沿用“代理商大排行”式写法，而是改成了更稳的结构：
+## 这版榜单的原则
+不是“谁吹得最猛谁第一”，而是交叉看：
 
-1. **官方事实优先**
-   - Claude Code 官方产品页
-   - Claude Code 官方文档
-   - Anthropic 官方 pricing
+1. 是否有公开文档
+2. 是否明确写 Claude Code
+3. 是否有价格线索
+4. 是否有可试用 / 低门槛路径
+5. 性价比是否建立在可验证信息上
 
-2. **第三方接入只写可核验内容**
-   - 是否有公开文档
-   - 是否明确支持 Claude Code
-   - 是否给出 `~/.claude/settings.json` 示例
-   - 是否能看到 `ANTHROPIC_BASE_URL` / `ANTHROPIC_AUTH_TOKEN`
+## 当前主榜思路
+前排优先考虑：
+- UniAPI
+- API易
+- AI Code With
+- 海鲸AI
+- 阿里云百炼 Coding Plan
 
-3. **不再拍脑袋排名**
-   - 不给不透明星级排行
-   - 不把营销词写成事实
-   - 不把短期体验写成长期结论
-
-## 页面主线
-站点当前围绕这几个模块组织：
-
-- Hero：一句话讲清核心立场
-- Claude Code 是什么
-- 已交叉验证的官方事实
-- 第三方接入核验框架
-- 可核验示例（非排名）
-- 核验清单
-- FAQ
-- CTA
-
-## 参考来源
-官方：
-- https://claude.com/pricing
-- https://claude.com/product/claude-code
-- https://code.claude.com/docs/en/overview
-
-第三方公开文档示例：
-- https://docs.aicodewith.com/zh/docs/claude-code
-- https://docs.uniapi.ai/integration/claude_code
+后排保留“观察位”，避免把证据链不足的平台硬写成强结论。
 
 ## 部署
-如果你要用 GitHub Pages，直接将仓库发布为 Pages 即可。
+推荐 GitHub Pages：
+- Branch: `main`
+- Folder: `/ (root)`
 
-推荐：
-- 分支：`main`
-- 根目录：`/ (root)`
-
-发布后主页一般为：
-
+站点地址：
 `https://yxhpy.github.io/alincc/`
 
 ## 核心立场
-**官方优先，第三方备用；先验证，再长期用。**
-
-这句话就是整个项目的底。别花里胡哨，稳比什么都值钱。
+**便宜可以看，但别瞎信便宜。**
